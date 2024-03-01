@@ -1,0 +1,87 @@
+﻿@model BasicSkin.Data.Item 
+Microsoft.AspNetCore.Mvc.Rendering;
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Item</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <select asp-for="Category" class="form-control">
+                    <option value="ak47">AK-47</option>
+                    <option value="awp">AWP</option>
+                    <option value="m4a4">M4A4</option>
+                    <option value="m4a1_s">M4A1-S</option>
+                    <option value="galilar">Galil AR</option>
+                    <option value="famas">FAMAS</option>
+                    <option value="ssg08">SSG 08</option>
+                    <option value="aug">AUG</option>
+                    <option value="sg553">SG 553</option>
+                    <option value="mac10">MAC-10</option>
+                    <option value="mp9">MP9</option>
+                    <option value="ump45">UMP-45</option>
+                    <option value="p90">P90</option>
+                    <option value="bizon">PP-Bizon</option>
+                    <option value="mp7">MP7</option>
+                    <option value="cz75a">CZ75-Auto</option>
+                    <option value="tec9">Tec-9</option>
+                    <option value="five_seven">Five-SeveN</option>
+                    <option value="dual_berettas">Dual Berettas</option>
+                    <option value="p250">P250</option>
+                    <option value="glock">Glock-18</option>
+                    <option value="usp_s">USP-S</option>
+                    <option value="deagle">Desert Eagle</option>
+                    <option value="revolver">R8 Revolver</option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageURL" class="control-label"></label>
+                <input asp-for="ImageURL" class="form-control" />
+                <span asp-validation-for="ImageURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
